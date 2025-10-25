@@ -1,9 +1,9 @@
 import axios from 'axios';
 import {Routes , Route} from 'react-router'
 import { useEffect , useState} from 'react';
-import {HomePage} from './pages/HomePage'
-import {CheckoutPage} from './pages/CheckoutPage'
-import {OrdersPage} from './pages/OrdersPage'
+import {HomePage} from './pages/home/HomePage'
+import {CheckoutPage} from './pages/checkout/CheckoutPage'
+import {OrdersPage} from './pages/order/OrdersPage'
 import {TrackingPage} from './pages/TrackingPage'
 
 import './App.css'
@@ -34,7 +34,7 @@ function App() {
 
       <Route 
         path='orders' 
-        element={ <OrdersPage />} 
+        element={ <OrdersPage cart={cart} />} 
       />
 
       <Route 
