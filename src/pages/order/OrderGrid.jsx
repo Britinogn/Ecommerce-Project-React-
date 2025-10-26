@@ -1,7 +1,7 @@
 import { formatMoney } from "../../utils/money";
 import dayjs from 'dayjs'
 import { Fragment } from 'react';
-
+import {Link} from 'react-router'
 
 export function OrderGrid({orders}) {
     return (
@@ -40,7 +40,7 @@ export function OrderGrid({orders}) {
                                             <div className="product-name">
                                                 {orderProduct.product.name}
                                             </div>
-                                        <div className="product-delivery-date">
+                                        <div className="product-delivery-date"> Arriving On:  
                                             {dayjs(orderProduct.estimatedDeliveryTimeMs).format('MMMM D')}
                                         </div>
                                         <div className="product-quantity">
@@ -53,11 +53,11 @@ export function OrderGrid({orders}) {
                                         </div>
 
                                         <div className="product-actions">
-                                            <a href="/tracking">
+                                            <Link to="/tracking">
                                                 <button className="track-package-button button-secondary">
                                                 Track package
                                                 </button>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </Fragment>
                                 )
